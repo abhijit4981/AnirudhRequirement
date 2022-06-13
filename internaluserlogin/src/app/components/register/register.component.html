@@ -1,0 +1,32 @@
+<div>
+  <form [formGroup]="userForm" (ngSubmit)="onSubmit(userForm)">
+    <div class="example-container">
+      <mat-form-field appearance="fill">
+        <mat-label>First Name</mat-label>
+        <input formControlName="firstName" matInput>
+      </mat-form-field><br>
+      <mat-form-field appearance="fill">
+        <mat-label>Last Name</mat-label>
+        <input formControlName="lastName" matInput>
+      </mat-form-field><br>
+      <mat-form-field appearance="fill">
+        <mat-label>Mobile Number</mat-label>
+        <input formControlName="mobileNumber" matInput>
+      </mat-form-field><br>
+      <mat-form-field appearance="fill">
+        <mat-label>Enter your email</mat-label>
+        <input formControlName="email" matInput placeholder="pat@example.com" [formControl]="email" required>
+        <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+      </mat-form-field><br>
+      <mat-form-field appearance="fill">
+        <mat-label>Enter your password</mat-label>
+        <input formControlName="password" matInput [type]="hide ? 'password' : 'text'">
+        <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+          <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+        </button>
+      </mat-form-field><br>
+      <button mat-flat-button color="primary" type="submit">Sign Up</button>
+    </div>
+    
+  </form>  
+</div>

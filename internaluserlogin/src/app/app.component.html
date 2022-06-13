@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <p>
+    <mat-toolbar color="primary">
+      
+      <span>{{title}}</span>
+      
+    </mat-toolbar>
+  </p>
+  
+  
+  <nav mat-tab-nav-bar>
+    <a mat-tab-link
+       [routerLink]="['/register-component']"
+       routerLinkActive #rla1="routerLinkActive"
+       [active]="rla1.isActive">Register Page
+    </a>
+    <a mat-tab-link
+       [routerLink]="['/viewuser-component']"
+       routerLinkActive #rla1="routerLinkActive"
+       [active]="rla1.isActive">View User
+    </a>
+    
+  </nav>
+  <!-- The routed views render in the <router-outlet>-->
+    <router-outlet></router-outlet>
+</body>
+</html>
